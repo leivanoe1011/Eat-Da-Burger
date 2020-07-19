@@ -13,7 +13,9 @@ var orm = {
     },
     // Need to be sure to include Double Quotes when necessary
     insertOne: function(insertVal, cb) {
-        var queryString = `INSERT INTO burgers VALUES(${insertVal})`;
+
+        var queryString = `INSERT INTO burgers (burger_name, devoured) VALUES(${insertVal})`;
+
         connection.query(queryString, function(err, result){
             if(err) throw err;
             cb(result);

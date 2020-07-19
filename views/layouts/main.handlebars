@@ -4,11 +4,16 @@
 	<meta charset="UTF-8">
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-	<link rel="stylesheet" href="/assets/css/style.css" type="text/css" />
+	{{!-- <link rel="stylesheet" href="/assets/css/style.css" type="text/css" /> --}}
 
 	<title>Burgers!</title>
 	<script src="https://code.jquery.com/jquery.js"></script>
-	<script src="/public/assets/js/burgers.js"></script>
+	
+	{{!-- 
+		Don't need to include the "public" folder below since it's 
+		already defined in the server js app use express static 
+	--}}
+	<script src="/assets/js/burgers.js"></script>
 	</head>
 	<body>
 		{{!-- The views will be loaded below --}}

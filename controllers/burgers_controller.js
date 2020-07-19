@@ -16,11 +16,42 @@ router.get("/", function(req,res){
         var obj = {
             burgers: data
         };
-        console.log("In the burgers controller js GET all");
-        console.log(obj);
+
         res.render("index", obj);
     });
 });
+
+router.post("/api/burgers", function(req,res){
+    var burgerName = req.body.burger_name;
+    var devoured = req.body.devoured;
+    
+    burger.insertOne(`"${burgerName}",${devoured}`, function(result){
+        if(result.changeRows == 0) {
+            // If no rows were changed, then the ID must not exist, so 404
+            return res.status(404).end();
+        } else {
+            res.status(200).end();
+        }
+    });
+
+});
+
+router.put("/api/burgers", function(req,res){
+    var burgerDevoured = req.body.devoured;
+    var burgerId = req.body.id;
+
+    var setVal = `devoured = ${burgerDevoured}`;
+    var whereVal = `id = ${burgerId}`;
+
+    burger.updateOne(setVal, whereVal, function(result){
+        if (result.changedRows == 0) {
+            // If no rows were changed, then the ID must not exist, so 404
+            return res.status(404).end();
+        } else {
+            res.status(200).end();
+        }
+    })
+})
 
 // router.get("/", function(req,res){
 

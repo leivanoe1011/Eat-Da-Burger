@@ -14,3 +14,5 @@ CREATE TABLE burgers
     devoured BOOLEAN NOT NULL
 );
 
+
+-- select * from burgers
