@@ -1,28 +1,37 @@
 
-<h1>Burgers</h1>
 
-<div class="row">
-    {{!-- The li will be loaded in the partial view --}}
-    <ol class="col-sm-12 col-lg-6" id="burgersAvailableId">
-        {{#each burgers}}
-            {{> burgers/burger-block devour=false}}
-        {{/each}}
-    </ol>
+<div class="container">
+    
+    <h1>Burgers</h1>
 
-    <ul class="col-sm-12 col-lg-6" id="burgersDevouredId">
-        {{#each burgers}}
-            {{#if devour}}
-                {{> burgers/burger-block devour=true}}
-            {{/if}}
-        {{/each}}
-    </ul>
+    <div class="row">
+        {{!-- The li will be loaded in the partial view --}}
+        <ol class="col-sm-12 col-lg-6" id="burgersAvailableId">
+            {{#each burgers}}
+                {{> burgers/burger-block devoured=true}}
+            {{/each}}
+        </ol>
+
+        <ul class="col-sm-12 col-lg-6" id="burgersDevouredId">
+            {{#each burgers}}
+                {{#if devoured}}
+                    {{> burgers/burger-block devoured=false}}
+                {{/if}}
+            {{/each}}
+        </ul>
+
+    </div>
+
+
+    {{!-- Add new Burgers --}}
+    <form class="row">
+
+        {{!-- This will use the POST Router --}}
+        <textarea name="burger" id="burgerName" cols="30" rows="2"></textarea>
+        <br>
+        <button type="submit" id="newBurger">Submit</button>
+
+    </form>
 
 </div>
 
-{{!-- Add new Burgers --}}
-<form>
-
-    <textarea name="burger" id="burgerName" cols="30" rows="10"></textarea>
-    <button type="submit" id="newBurger"></button>
-
-</form>

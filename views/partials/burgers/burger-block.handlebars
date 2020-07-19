@@ -1,8 +1,11 @@
 <li>
-    {{name}}
+    <span>{{burger_name}}</span>
+    
     {{!-- The button below only gets created if the Devour is True --}}
+    {{!-- Else only the name will be populated above --}}
     <button class="change-devour" data-id="{{id}}">
-        {{#if devour}} 
+        {{#if devoured}} 
+        {{!-- This button will use the PUT router --}}
             DEVOUR!
         {{/if}}
     </button>

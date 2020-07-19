@@ -16,6 +16,7 @@ router.get("/", function(req,res){
         var obj = {
             burgers: data
         };
+        console.log("In the burgers controller js GET all");
         console.log(obj);
         res.render("index", obj);
     });
