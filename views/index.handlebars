@@ -1,3 +1,23 @@
 
 <h1>Burgers</h1>
-<button type="submit"></button>
+<ol id="burgersAvailableId">
+    {{#each burgers}}
+        {{> burgers/burger-block devour=false}}
+    {{/each}}
+</ol>
+
+<ul id="burgersDevouredId">
+    {{#each burgers}}
+        {{#if devour}}
+            {{> burgers/burger-block devour=true}}
+        {{/if}}
+    {{/each}}
+</ul>
+
+
+<form action="">
+
+    <textarea name="burger" id="burgerName" cols="30" rows="10"></textarea>
+    <button type="submit" id="newBurger"></button>
+
+</form>

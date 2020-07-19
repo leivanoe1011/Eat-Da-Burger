@@ -1,9 +1,25 @@
 
 // Dependencies
 var express = require("express");
+
+// Router will read the URL and re-route the appropriate function
 var router = express.Router();
+
+// The burger data model
 var burger = require("../models/burger.js");
 
+// Below we are going to query all the rows in the Burgers table.
+// then we going to return and load it to the "data" parameter.
+// After we going to pass the "data" result to the Index View to get parsed
+router.get("/", function(req,res){
+    burger.selectAll(function(data){
+        var obj = {
+            burgers: data
+        };
+        console.log(obj);
+        res.render("index" obj);
+    });
+});
 
 // router.get("/", function(req,res){
 
