@@ -15,7 +15,7 @@ var burger = {
         });
     },
 
-    updateOne: function(setVal, whereVal){
+    updateOne: function(setVal, whereVal, cb){
         orm.updateOne(setVal, whereVal, function(res){
             cb(res);
         })

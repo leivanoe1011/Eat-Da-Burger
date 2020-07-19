@@ -36,15 +36,19 @@ router.post("/api/burgers", function(req,res){
 
 });
 
-router.put("/api/burgers", function(req,res){
+router.put("/api/burgers/:id", function(req,res){
     var burgerDevoured = req.body.devoured;
-    var burgerId = req.body.id;
+    var burgerId =  req.params.id;
 
     var setVal = `devoured = ${burgerDevoured}`;
     var whereVal = `id = ${burgerId}`;
 
+    console.log("In put router");
+    console.log(setVal);
+    console.log(whereVal);
+
     burger.updateOne(setVal, whereVal, function(result){
-        if (result.changedRows == 0) {
+        if (result.affectedRows == 0) {
             // If no rows were changed, then the ID must not exist, so 404
             return res.status(404).end();
         } else {
