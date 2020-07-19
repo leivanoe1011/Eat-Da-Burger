@@ -1,18 +1,23 @@
 
 <h1>Burgers</h1>
-<ol id="burgersAvailableId">
-    {{#each burgers}}
-        {{> burgers/burger-block devour=false}}
-    {{/each}}
-</ol>
 
-<ul id="burgersDevouredId">
-    {{#each burgers}}
-        {{#if devour}}
-            {{> burgers/burger-block devour=true}}
-        {{/if}}
-    {{/each}}
-</ul>
+<div class="row">
+    {{!-- The li will be loaded in the partial view --}}
+    <ol class="col-sm-12 col-lg-6" id="burgersAvailableId">
+        {{#each burgers}}
+            {{> burgers/burger-block devour=false}}
+        {{/each}}
+    </ol>
+
+    <ul class="col-sm-12 col-lg-6" id="burgersDevouredId">
+        {{#each burgers}}
+            {{#if devour}}
+                {{> burgers/burgerDevoured devour=true}}
+            {{/if}}
+        {{/each}}
+    </ul>
+
+</div>
 
 
 <form action="">
