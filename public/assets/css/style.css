@@ -1,4 +1,12 @@
 
+body{
+    background-image: linear-gradient(to left, #f09c20, #f0ba6bbd);
+}
+
+h1{
+    color: red;
+}
+
 .container {
     margin: 10px;
 }
@@ -14,6 +22,11 @@
 
 .devourCnt{
     padding-top: 10px;
+}
+
+.devouredList{
+    background: antiquewhite;
+    padding: 2px;
 }
 
 

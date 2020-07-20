@@ -1,13 +1,18 @@
 
 <div class="row">
-    <span class="list-group-item col-sm-10 col-lg-10">{{id}}. {{burger_name}}</span>
 
+    {{#if devoured}}
+        <span class="notDevouredList list-group-item col-sm-10 col-lg-10">{{id}}. {{burger_name}}</span>
+    {{else}}
+        <span class="devouredList list-group-item col-sm-10 col-lg-10">{{id}}. {{burger_name}}</span>
+    {{/if}}
+    
     {{!-- The button below only gets created if the Devour is True --}}
     {{!-- Else only the name will be populated above --}}
     <span class="devourCnt col-sm-2 col-lg-2">
         {{#if devoured}} 
             {{!-- This button will use the PUT router --}}
-            <button class="change-devour" data-id="{{id}}">DEVOUR!</button>
+            <button type="button" class="btn btn-light change-devour" data-id="{{id}}">DEVOUR!</button>
             
         {{/if}}
     </span>    
