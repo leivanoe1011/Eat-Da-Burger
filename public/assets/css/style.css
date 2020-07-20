@@ -1,3 +1,22 @@
+
 .container {
     margin: 10px;
 }
+
+#burgerImgId{
+    width: 100px;
+    height: auto;
+}
+
+.list-group-item{
+    margin-bottom: 2.5px;
+}
+
+.devourCnt{
+    padding-top: 10px;
+}
+
+
+
+
+
