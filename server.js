@@ -14,6 +14,10 @@ var app = express();
 // Server Static content for the app from the "public" directory in the app directory
 app.use(express.static("public"));
 
+// This will allow me to access the image folder and render images
+app.use(express.static('public/assets/images')); 
+
+
 // Parse application body as JSON
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());

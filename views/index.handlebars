@@ -1,39 +1,83 @@
 
 
 <div class="container">
-    
-    <h1>Burgers</h1>
+   
+        <div class="row">
+            {{!-- col setting must be present for d-flex to work --}}
+            <div class="col-sm-12 col-lg-12">
+                <div class="d-flex justify-content-center">
+                    <img src="cheeseburger_no_Background.png" alt="cheeseburger">
+                </div>
+            </div>
 
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12 col-lg-12">
+                 <div class="d-flex justify-content-center">
+                    <h1>Burgers</h1>
+                </div>  
+            </div>
+
+        </div>
+           
+
+</div>
+
+<div class="container">
+    
     <div class="row">
         {{!-- The li will be loaded in the partial view --}}
-        <ol class="col col-sm-12 col-lg-3" id="burgersAvailableId">
-            {{#each burgers}}
-                {{#unless devoured}}
-                    {{> burgers/burger-block devoured=true}}
-                {{/unless}}                
-            {{/each}}
-        </ol>
+        <div class="col-sm-12 col-lg-6">
+            <ul class="list-group">
+                {{#each burgers}}
+                    {{#unless devoured}}
+                        {{> burgers/burger-block devoured=true}}
+                    {{/unless}}                
+                {{/each}}
+            </ul>
+            
+        </div>
 
-        <ul class="col col-sm-12 col-lg-3" id="burgersDevouredId">
-            {{#each burgers}}
-                {{#if devoured}}
-                    {{> burgers/burger-block devoured=false}}
-                {{/if}}
-            {{/each}}
-        </ul>
+        <div class="col-sm-12 col-lg-6">
+            <ul class="list-group">
+                {{#each burgers}}
+                    {{#if devoured}}
+                        {{> burgers/burger-block devoured=false}}
+                    {{/if}}
+                {{/each}}
+            </ul>
+        </div>
+        
 
     </div>
 
-
-    {{!-- Add new Burgers --}}
-    <form class="row">
-
-        {{!-- This will use the POST Router --}}
-        <textarea name="burger" id="burgerName" cols="30" rows="2"></textarea>
-        <br>
-        <button type="submit" id="newBurger">Submit</button>
-
-    </form>
-
 </div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 col-lg-12">
+             {{!-- Add new Burgers --}}
+            <form >
+
+                <div class="d-flex justify-content-center">
+                    {{!-- This will use the POST Router --}}
+                    <textarea name="burger" id="burgerName" cols="30" rows="2"></textarea>
+                </div>
+                
+                <br>
+
+                <div class="d-flex justify-content-center">
+                    <button type="submit" id="newBurger">Submit</button>
+                </div>
+                
+
+            </form>
+        </div>
+       
+    </div>
+</div>
+    
+
+
 
